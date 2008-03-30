@@ -1,0 +1,30 @@
+---
+name: WWW-Pastebin-Many-Retrieve
+version: 0.001
+author:
+  - 'Zoffix Znet <zoffix@cpan.org>'
+abstract: retrieve pastes from many different pastebin sites
+license: perl
+resources:
+  license: http://dev.perl.org/licenses/
+requires:
+  Carp: 1.04
+  Class::Data::Accessor: 0.04001
+  WWW::Pastebin::CSSStandardsOrg::Retrieve: 0.001
+  WWW::Pastebin::NoMorePastingCom::Retrieve: 0.001
+  WWW::Pastebin::PastebinCa::Retrieve: 0.001
+  WWW::Pastebin::PastebinCom::Retrieve: 0.002
+  WWW::Pastebin::PastieCabooSe::Retrieve: 0.001
+  WWW::Pastebin::PhpfiCom::Retrieve: 0.001
+  WWW::Pastebin::RafbNet::Retrieve: 0.001
+  WWW::Pastebin::UbuntuNlOrg::Retrieve: 0.001
+build_requires:
+  Test::More: 0
+provides:
+  WWW::Pastebin::Many::Retrieve:
+    file: lib/WWW/Pastebin/Many/Retrieve.pm
+    version: 0.001
+generated_by: Module::Build version 0.2808
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
