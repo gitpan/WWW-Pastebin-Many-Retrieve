@@ -3,9 +3,8 @@ package WWW::Pastebin::Many::Retrieve;
 use warnings;
 use strict;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 use Carp;
-use WWW::Pastebin::CSSStandardsOrg::Retrieve;
 use WWW::Pastebin::NoMorePastingCom::Retrieve;
 use WWW::Pastebin::PastebinCa::Retrieve;
 use WWW::Pastebin::PastebinCom::Retrieve;
@@ -34,9 +33,6 @@ sub new {
     $args{timeout} ||= 30;
 
     my %objs = (
-        css_standards => WWW::Pastebin::CSSStandardsOrg::Retrieve->new(
-            timeout => $args{timeout},
-        ),
         no_more_pasting => WWW::Pastebin::NoMorePastingCom::Retrieve->new(
             timeout => $args{timeout},
         ),
@@ -61,8 +57,6 @@ sub new {
     );
 
     my %res = (
-    
-        css_standards => qr{ (?:http://)? \Qpaste.css-standards.org/\E }xi,
         no_more_pasting => qr{^
             (?:http://)?
             (?:www\.)?
@@ -139,7 +133,6 @@ WWW::Pastebin::Many::Retrieve - retrieve pastes from many different pastebin sit
     my @pastes = qw(
         http://pastebin.ca/963177
         http://pastebin.com/d2fbd2737
-        http://paste.css-standards.org/2904
         http://www.nomorepasting.com/getpaste.php?pasteid=10124
         http://pastie.caboo.se/172741
         http://phpfi.com/302683
@@ -230,6 +223,9 @@ in a string to obtain the content of the paste.
 
 =head1 SUPPORTED PASTEBINS
 
+B<Note:> this module no longer supports http://paste.css-standards.org/
+pastebin as the site no longer exists.
+
 Currently the module is able to retrieve pastes from the following
 pastebins:
 
@@ -240,10 +236,6 @@ Handled by L<WWW::Pastebin::PastebinCa::Retrieve>
 =head2 http://pastebin.com/d2fbd2737
 
 Handled by L<WWW::Pastebin::PastebinCom::Retrieve>
-
-=head2 http://paste.css-standards.org/2904
-
-Handled by L<WWW::Pastebin::CSSStandardsOrg::Retrieve>
 
 =head2 http://www.nomorepasting.com/getpaste.php?pasteid=10124
 

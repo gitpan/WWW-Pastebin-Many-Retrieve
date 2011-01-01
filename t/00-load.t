@@ -3,11 +3,10 @@
 use strict;
 use warnings;
 
-use Test::More tests => 13;
+use Test::More tests => 12;
 
 BEGIN {
     use_ok('Carp');
-    use_ok('WWW::Pastebin::CSSStandardsOrg::Retrieve');
     use_ok('WWW::Pastebin::NoMorePastingCom::Retrieve');
     use_ok('WWW::Pastebin::PastebinCa::Retrieve');
     use_ok('WWW::Pastebin::PastebinCom::Retrieve');

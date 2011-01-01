@@ -12,7 +12,6 @@ my $builder = Module::Build->new(
     },
     requires => {
         'Carp'                                      => 1.04,
-        'WWW::Pastebin::CSSStandardsOrg::Retrieve'  => 0.001,
         'WWW::Pastebin::NoMorePastingCom::Retrieve' => 0.001,
         'WWW::Pastebin::PastebinCa::Retrieve'       => 0.001,
         'WWW::Pastebin::PastebinCom::Retrieve'      => 0.002,

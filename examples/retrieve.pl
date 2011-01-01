@@ -11,7 +11,6 @@ my $paster = WWW::Pastebin::Many::Retrieve->new;
 my @pastes = qw(
     http://pastebin.ca/963177
     http://pastebin.com/d2fbd2737
-    http://paste.css-standards.org/2904
     http://www.nomorepasting.com/getpaste.php?pasteid=10124
     http://pastie.caboo.se/172741
     http://phpfi.com/302683
